@@ -1,0 +1,52 @@
+<div class="card flex flex-column md:flex-row gap-3 wrapper">
+  <h1>Sign Up : </h1>
+  <form [formGroup]="sighUpForm" class="form">
+    <div class="formGroup">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+          <i class="pi pi-google"></i>
+        </span>
+        <input pInputText placeholder="Email" type="email" id="email" formControlName="email" />
+      </div>
+      <span class="ng-invalid ng-dirty error"
+        *ngIf="sighUpForm.controls['email'].touched && sighUpForm.controls['email'].errors">
+        <span class="ng-invalid ng-dirty" *ngIf="sighUpForm.controls['email'].errors['required']">Email is required.
+        </span>
+        <span class="ng-invalid ng-dirty" *ngIf="sighUpForm.controls['email'].errors['email']">Invalid email address.
+        </span>
+      </span>
+    </div>
+    <div class="formGroup">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+          <i class="pi pi-key"></i>
+        </span>
+        <input pInputText placeholder="Password" type="email" id="password" formControlName="password" />
+      </div>
+      <div  class="ng-invalid ng-dirty error" *ngIf="sighUpForm.controls['password'].touched && sighUpForm.controls['password'].errors">
+        <div *ngIf="sighUpForm.controls['password'].errors['required']">Password is required.</div>
+        <div *ngIf="sighUpForm.controls['password'].errors['minlength']">Password must be at least 6 characters long.
+        </div>
+      </div>
+    </div>
+
+    <div class="formGroup">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+          <i class="pi pi-lock"></i>
+        </span>
+        <input pInputText placeholder="Password" type="email" id="password" formControlName="confirmPassword" />
+      </div>
+      <div  class="ng-invalid ng-dirty error" *ngIf="sighUpForm.controls['confirmPassword'].touched && sighUpForm.controls['confirmPassword'].errors">
+        <div *ngIf="sighUpForm.controls['confirmPassword'].errors['required']">Confirm Password is required.</div>
+      </div>
+    </div>
+
+    <div class="formGroup">
+      <div class="p-inputgroup">
+        <p-button label="Sign Up" (onClick)="onSubmit()" type="button" ></p-button>
+      </div>
+
+    </div>
+  </form>
+</div>

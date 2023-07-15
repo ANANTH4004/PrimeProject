@@ -1,0 +1,77 @@
+.wrapper {
+    background-color: #96caf1;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+   margin-bottom: 30px;
+   padding: 30px;
+   margin: 70px auto;
+   width: 40%;
+   display: flexbox;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+
+  }
+.fromGroup{
+    margin-bottom: 30px;
+}
+.p-inputgroup {
+    padding: 20px;
+}
+.error{
+    color: rgb(220, 16, 16);
+    padding-left: 20px;
+}
+
+
+
+
+//   .p-inputgroup-addon {
+//     position: absolute;
+//     left: 0;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     padding: 0 10px;
+//     color: #808080;
+//   }
+
+//   input[type="email"],
+//   input[type="password"] {
+//     width: 100%;
+//     padding: 10px;
+//     border: none;
+//     border-radius: 5px;
+//     background-color: #f2f2f2;
+//     color: #333;
+//   }
+
+
+
+
+
+//   button {
+//    // padding: 10px 20px;
+//     border: none;
+//     border-radius: 5px;
+//     background-color: #007bff;
+//     color: #fff;
+//     cursor: pointer;
+//   }
+
+
+
+//   button:active,
+//   button:focus {
+//     outline: none;
+//   }
+
+  /* Media Query for smaller screens */
+  @media (max-width: 768px) {
+    .wrapper {
+        width: 90%;
+       padding: 20px;
+       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+  }

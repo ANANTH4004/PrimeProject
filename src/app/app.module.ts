@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { PrimeNGModule } from 'src/PrimeNG/primeNg';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    SignUpComponent
   ],
   imports: [
     FormsModule,
