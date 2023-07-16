@@ -1,1 +1,15 @@
-<p>home works!</p>
+
+
+<div class="card flex justify-content-center">
+    <p-sidebar [(visible)]="sidebarVisible" position="left" styleClass="w-80rem" >
+        <ng-template pTemplate="header">
+            <h1>Welcome {{userName}} Anand</h1>
+        </ng-template>
+        <ng-template  pTemplate="content">
+            <p-listbox [options]="options" styleClass="navList"></p-listbox>
+        </ng-template>
+        <ng-template pTemplate="footer">Footer Content</ng-template>
+    </p-sidebar>
+    <p-button (click)="sidebarVisible = true" icon="pi pi-arrow-right"></p-button>
+</div>
+

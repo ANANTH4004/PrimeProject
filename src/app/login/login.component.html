@@ -1,0 +1,59 @@
+<div class="card flex flex-column md:flex-row gap-3 wrapper">
+    <h1>Login : </h1>
+    <form [formGroup]="loginForm" class="form">
+        <div class="formGroup">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-google"></i>
+                </span>
+                <input pInputText placeholder="Email" type="email" id="email" formControlName="email" />
+            </div>
+            <span class="ng-invalid ng-dirty error"
+                *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].errors">
+                <span class="ng-invalid ng-dirty" *ngIf="loginForm.controls['email'].errors['required']">Email is
+                    required.
+                </span>
+                <span class="ng-invalid ng-dirty" *ngIf="loginForm.controls['email'].errors['email']">Invalid email
+                    address.
+                </span>
+            </span>
+        </div>
+        <div class="formGroup">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-key"></i>
+                </span>
+                <input pInputText [type]="passwordVisible ? 'text' : 'password'" placeholder="Password" type="password"
+                    id="password" formControlName="password" />
+                <span class="toggle-password p-inputgroup-addon" (click)="togglePasswordVisibility()">
+                    <i [ngClass]="passwordVisible ? 'pi pi-eye-slash' : 'pi pi-eye'"></i>
+                </span>
+            </div>
+            <div class="ng-invalid ng-dirty error"
+                *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].errors">
+                <div *ngIf="loginForm.controls['password'].errors['required']">Password is required.</div>
+                <div *ngIf="loginForm.controls['password'].errors['minlength']">Password must be at least 6 characters
+                    long.
+                </div>
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <div class="p-inputgroup">
+                <p-button label=" Login With Google" icon="pi pi-google" styleClass="p-button custom-button"></p-button>
+            </div>
+
+        </div>
+
+        <div class="buttonGroup">
+            <div class="p-inputgroup">
+                <p-button styleClass="p-button-raised" label="Login" (onClick)="onSubmit()" type="button"></p-button>
+            </div>
+            <div class="p-inputgroup">
+                <p-button label="forgot&nbsp;password?" styleClass="p-button-link"></p-button>
+
+            </div>
+
+        </div>
+    </form>
+</div>

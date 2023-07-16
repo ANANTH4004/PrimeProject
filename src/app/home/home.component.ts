@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SidebarModule } from 'primeng/sidebar';
 
 @Component({
   selector: 'app-home',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  userName !: String
+  sidebarVisible : boolean = false;
+
+  options : string[] = ["Home" , "Portfolio" , "Expense"];
 }
