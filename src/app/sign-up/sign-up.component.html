@@ -21,9 +21,10 @@
         <span class="p-inputgroup-addon">
           <i class="pi pi-key"></i>
         </span>
-        <input pInputText placeholder="Password" type="email" id="password" formControlName="password" />
+        <input pInputText placeholder="Password" type="password" id="password" formControlName="password" />
       </div>
-      <div  class="ng-invalid ng-dirty error" *ngIf="sighUpForm.controls['password'].touched && sighUpForm.controls['password'].errors">
+      <div class="ng-invalid ng-dirty error"
+        *ngIf="sighUpForm.controls['password'].touched && sighUpForm.controls['password'].errors">
         <div *ngIf="sighUpForm.controls['password'].errors['required']">Password is required.</div>
         <div *ngIf="sighUpForm.controls['password'].errors['minlength']">Password must be at least 6 characters long.
         </div>
@@ -35,16 +36,23 @@
         <span class="p-inputgroup-addon">
           <i class="pi pi-lock"></i>
         </span>
-        <input pInputText placeholder="Password" type="email" id="password" formControlName="confirmPassword" />
+        <input pInputText [type]="passwordVisible ? 'text' : 'password'" placeholder="Confirm Password" type="password" id="confirmPassword" formControlName="confirmPassword"  />
+        <!-- <span class="toggle-password p-inputgroup-addon" onclick="togglePasswordVisibility('confirmPassword')">
+          <i class="pi pi-eye"></i>
+        </span> -->
+        <span class="toggle-password p-inputgroup-addon" (click)="togglePasswordVisibility()">
+          <i [ngClass]="passwordVisible ? 'pi pi-eye-slash' : 'pi pi-eye'"></i>
+        </span>
       </div>
-      <div  class="ng-invalid ng-dirty error" *ngIf="sighUpForm.controls['confirmPassword'].touched && sighUpForm.controls['confirmPassword'].errors">
+      <div class="ng-invalid ng-dirty error"
+        *ngIf="sighUpForm.controls['confirmPassword'].touched && sighUpForm.controls['confirmPassword'].errors">
         <div *ngIf="sighUpForm.controls['confirmPassword'].errors['required']">Confirm Password is required.</div>
       </div>
     </div>
 
     <div class="formGroup">
       <div class="p-inputgroup">
-        <p-button label="Sign Up" (onClick)="onSubmit()" type="button" ></p-button>
+        <p-button label="Sign Up" (onClick)="onSubmit()" type="button"></p-button>
       </div>
 
     </div>

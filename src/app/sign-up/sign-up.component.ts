@@ -8,7 +8,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SignUpComponent implements OnInit{
 
+
   sighUpForm !: FormGroup;
+  passwordVisible: boolean = false;
 
   constructor(private sighUpBuilger : FormBuilder){}
   ngOnInit(): void {
@@ -29,4 +31,7 @@ export class SignUpComponent implements OnInit{
     console.log("From Submitted : " + this.f['email'].value)
   }
 
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
+  }
 }
