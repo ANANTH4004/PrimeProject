@@ -12,9 +12,9 @@ export class SignUpComponent implements OnInit{
   sighUpForm !: FormGroup;
   passwordVisible: boolean = false;
 
-  constructor(private sighUpBuilger : FormBuilder){}
+  constructor(private sighUpBuilder : FormBuilder){}
   ngOnInit(): void {
-   this.sighUpForm = this.sighUpBuilger.group({
+   this.sighUpForm = this.sighUpBuilder.group({
     email : ['',[Validators.required , Validators.email]],
     password : ['',[Validators.required,Validators.minLength(6)]],
     confirmPassword : ['',[Validators.required]]
