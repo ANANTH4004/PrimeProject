@@ -8,13 +8,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
+import { DoubleDropdownComponent } from './double-dropdown/double-dropdown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    DoubleDropdownComponent
   ],
   imports: [
     FormsModule,

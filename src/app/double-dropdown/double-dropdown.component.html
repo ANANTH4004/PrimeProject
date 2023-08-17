@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="dropdown-container">
+      <p-dropdown [options]="continentsAndCountries" optionLabel="continent" placeholder="Select Continent"
+                  (onChange)="updateCountryOptions($event.value.continent)"></p-dropdown>
+    </div>
+
+    <div class="dropdown-container">
+      <p-dropdown [options]="getCountryOptions()" optionLabel="country" placeholder="Select Country"
+                  (onChange)="onCountrySelect($event.value)"></p-dropdown>
+    </div>
+  </div>
