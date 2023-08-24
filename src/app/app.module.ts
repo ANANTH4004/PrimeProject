@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { DoubleDropdownComponent } from './double-dropdown/double-dropdown.component';
+import { DynamicAddingComponent } from './dynamic-adding/dynamic-adding.component';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { DoubleDropdownComponent } from './double-dropdown/double-dropdown.compo
     HomeComponent,
     SignUpComponent,
     LoginComponent,
-    DoubleDropdownComponent
+    DoubleDropdownComponent,
+    DynamicAddingComponent
   ],
   imports: [
     FormsModule,
