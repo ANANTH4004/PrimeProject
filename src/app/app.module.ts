@@ -10,6 +10,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { DoubleDropdownComponent } from './double-dropdown/double-dropdown.component';
 import { DynamicAddingComponent } from './dynamic-adding/dynamic-adding.component';
+import { TestPageComponent } from './test-page/test-page.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { DynamicAddingComponent } from './dynamic-adding/dynamic-adding.componen
     SignUpComponent,
     LoginComponent,
     DoubleDropdownComponent,
-    DynamicAddingComponent
+    DynamicAddingComponent,
+    TestPageComponent
   ],
   imports: [
     FormsModule,

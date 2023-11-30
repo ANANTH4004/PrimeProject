@@ -1,0 +1,25 @@
+<div class="p-grid page">
+    <div class="p-col-4">
+      <div class="question-numbers">
+        <div class="p-card">
+          <div class="p-card-header">Question Numbers</div>
+          <div class="p-card-body">
+            <div class="question-number" *ngFor="let question of questions; let i = index" (click)="showQuestion(i)">{{ i + 1 }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-col-8">
+      <div class="question-description">
+        <div class="p-card">
+          <div class="p-card-header">Question Description</div>
+          <div class="p-card-body">
+            <div class="question-details" *ngIf="selectedQuestion">
+              <h3>{{ selectedQuestion.title }}</h3>
+              <p>{{ selectedQuestion.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
