@@ -11,6 +11,9 @@ import { LoginComponent } from './login/login.component';
 import { DoubleDropdownComponent } from './double-dropdown/double-dropdown.component';
 import { DynamicAddingComponent } from './dynamic-adding/dynamic-adding.component';
 import { TestPageComponent } from './test-page/test-page.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { BodyComponent } from './body/body.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -21,14 +24,18 @@ import { TestPageComponent } from './test-page/test-page.component';
     LoginComponent,
     DoubleDropdownComponent,
     DynamicAddingComponent,
-    TestPageComponent
+    TestPageComponent,
+    NavbarComponent,
+    BodyComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     PrimeNGModule,
     BrowserModule,
     AppRoutingModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
