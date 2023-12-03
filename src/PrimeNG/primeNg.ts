@@ -27,12 +27,15 @@ import { PrimeNGConfig, SharedModule } from 'primeng/api';
 import { VirtualScrollerModule } from 'primeng/virtualscroller';
 import { SidebarModule } from 'primeng/sidebar';
 import { ListboxModule } from 'primeng/listbox';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { TagModule } from 'primeng/tag';
+import { BadgeModule } from 'primeng/badge';
+import { ChipModule } from 'primeng/chip';
 // Import other PrimeNG modules you need
 
 @NgModule({
   imports: [
     BrowserModule,
-
     BrowserAnimationsModule,
     ButtonModule,
     InputTextModule,
@@ -59,6 +62,10 @@ import { ListboxModule } from 'primeng/listbox';
     DynamicDialogModule,
     ToolbarModule,
     ListboxModule,
+    BreadcrumbModule,
+    TagModule,
+    BadgeModule,
+    ChipModule
     // Import other PrimeNG modules you need
   ],
   exports: [
@@ -90,6 +97,10 @@ import { ListboxModule } from 'primeng/listbox';
     ToolbarModule,
     SidebarModule,
     ListboxModule,
+    BreadcrumbModule,
+    TagModule,
+    BadgeModule,
+    ChipModule
     // Export other PrimeNG modules you need
   ]
 })

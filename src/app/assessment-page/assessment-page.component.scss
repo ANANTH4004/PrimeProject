@@ -1,0 +1,43 @@
+
+.home{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+
+   .home-text{
+    display: flex;
+    flex-direction: row;
+    p{
+        color: purple;
+    }
+   }
+   margin: 10px;
+}
+
+/* styles.css (or your component-specific styles) */
+.selected {
+    color: green;
+    background-color: lightgreen;
+  text-align: center;
+  }
+
+  .not-selected {
+    border-radius: 5px;
+    color: red;
+    background-color: lightcoral;
+   text-align: center;
+  }
+.pending{
+color: yellowgreen;
+background: rgb(200, 200, 36);
+text-align: center;
+}
+
+
+  ::ng-deep .p-chip-text{
+   // background: red;
+   font-size: 10px;
+   font-weight: bold;
+  }
+
+

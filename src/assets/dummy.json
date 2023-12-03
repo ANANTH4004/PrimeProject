@@ -1,0 +1,109 @@
+
+[
+{
+    "CandidateName" :"Anand",
+    "Manager" : "Shanthosh",
+    "Assesssment" : "IBM Curam Developer",
+    "Date":"2023-09-03",
+    "Skills" : [
+        "JavaScript",
+        "Angular",
+        "Java",
+        "NodeJs"
+    ],
+    "Result" : "Rejected",
+    "Score" : 75.00
+},
+{
+    "CandidateName" :"varun",
+    "Manager" : "Shanthosh",
+    "Assesssment" : "IBM Curam Developer",
+    "Date":"2023-09-03",
+    "Skills" : [
+        "NodeJs",
+         "Java",
+        "Angular"
+    ],
+    "Result" : "ShortListed",
+    "Score" : 75.00
+},
+{
+    "CandidateName" :"Nithya",
+    "Manager" : "Shanthosh",
+    "Assesssment" : "IBM Curam Developer",
+    "Date":"2023-09-03",
+    "Skills" : [
+        "NodeJs",
+         "Java",
+        "Angular"
+    ],
+    "Result" : "Rejected",
+    "Score" : 75.00
+},
+{
+    "CandidateName" :"samantha",
+    "Manager" : "Shanthosh",
+    "Assesssment" : "IBM Curam Developer",
+    "Date":"2023-09-03",
+    "Skills" : [
+        "NodeJs",
+         "Java",
+        "Angular"
+    ],
+    "Result" : "ShortListed",
+    "Score" : 75.00
+},
+{
+    "CandidateName" :"Arjun",
+    "Manager" : "Shanthosh",
+    "Assesssment" : "IBM Curam Developer",
+    "Date":"2023-09-03",
+    "Skills" : [
+        "NodeJs",
+         "Java",
+        "Angular"
+    ],
+    "Result" : "ShortListed",
+    "Score" : 75.00
+},
+{
+    "CandidateName" :"Akash",
+    "Manager" : "Shanthosh",
+    "Assesssment" : "IBM Curam Developer",
+    "Date":"2023-09-03",
+    "Skills" : [
+        "NodeJs",
+         "Java",
+        "Angular"
+    ],
+    "Result" : "Pending",
+    "Score" : 75.00
+},
+{
+    "CandidateName" :"Arun",
+    "Manager" : "Shanthosh",
+    "Assesssment" : "IBM Curam Developer",
+    "Date":"2023-09-03",
+    "Skills" : [
+        "JavaScript",
+        "Angular",
+        "Java",
+        "NodeJs"
+    ],
+    "Result" : "Rejected",
+    "Score" : 75.00
+},
+{
+    "CandidateName" :"Priya",
+    "Manager" : "Shanthosh",
+    "Assesssment" : "IBM Curam Developer",
+    "Date":"2023-09-03",
+    "Skills" : [
+        "NodeJs",
+         "Java",
+        "Angular"
+    ],
+    "Result" : "ShortListed",
+    "Score" : 75.00
+}
+]

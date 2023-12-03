@@ -1,0 +1,56 @@
+<div>
+    <p-card>
+        <div class="card flex justify-content-center">
+            <p-breadcrumb class="max-w-full" [model]="items" ></p-breadcrumb>
+        </div>
+        <!-- <div class="top-content">
+            <div class="assesment-header">
+                <p class="assessment-text">Assessment</p>
+            </div>
+            <div class="home">
+                <i class="home-icon" class="fal fa-home"></i>
+                <span class="home-text"> Home > <p>Assessment</p></span>
+            </div>
+        </div> -->
+        <div class="candidate-table">
+            <p-table [value]="candidateData"
+             [paginator]="true"
+              [rows]="5"
+              [showCurrentPageReport]="true"
+             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [rowsPerPageOptions]="[4, 8, 12]"
+            [tableStyle]="{ 'min-width': '50rem' }"
+            >
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="CandidateName">Candidate Name <p-sortIcon field="code"></p-sortIcon></th>
+                        <th>Manager</th>
+                        <th>Assessment</th>
+                        <th pSortableColumn="Date">Date  <p-sortIcon field="code"></p-sortIcon></th>
+                        <th>Skills</th>
+                        <th>Result</th>
+                        <th>Score</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-candidate>
+                    <tr>
+                        <td>{{ candidate.CandidateName }}</td>
+                        <td>{{ candidate.Manager }}</td>
+                        <td>{{ candidate.Assesssment }}</td>
+                        <td>{{ candidate.Date }}</td>
+                        <td>
+                            <span class="skills" *ngFor="let item of getFormattedSkills(candidate.Skills).skills">
+                                <p-chip  label={{item}} ></p-chip>
+                            </span> <span *ngIf="getFormattedSkills(candidate.Skills).remainingCount > 0">+
+                                    <p-badge [value]="getFormattedSkills(candidate.Skills).remainingCount.toString()"></p-badge>
+                                </span>
+                        </td>
+                        <!-- <td>{{getFormattedSkills(candidate.Skills) }}</td> -->
+                        <td><p [ngClass]="getResultClass(candidate.Result)">{{ candidate.Result }}</p> </td>
+                        <td>{{ candidate.Score }}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </p-card>
+</div>

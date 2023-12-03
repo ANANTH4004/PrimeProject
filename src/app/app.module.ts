@@ -14,6 +14,8 @@ import { TestPageComponent } from './test-page/test-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BodyComponent } from './body/body.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AssessmentPageComponent } from './assessment-page/assessment-page.component';
+import {  HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DynamicAddingComponent,
     TestPageComponent,
     NavbarComponent,
-    BodyComponent
+    BodyComponent,
+    AssessmentPageComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -35,6 +38,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PrimeNGModule,
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
 
   ],
   providers: [],
