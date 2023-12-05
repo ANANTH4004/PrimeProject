@@ -21,6 +21,92 @@
             [rowsPerPageOptions]="[4, 8, 12]"
             [tableStyle]="{ 'min-width': '50rem' }"
             >
+            <ng-template pTemplate="caption">
+
+                <p-toolbar>
+                    <div class="p-toolbar-group-start ml-auto toolbar-start">
+                        <span class="p-input-icon-left ml-auto">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text"  placeholder="Search keyword" />
+                        </span>
+                         <p-dropdown [options]="managers" [(ngModel)]="selectedManager" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Manager">
+                        <ng-template pTemplate="selectedItem">
+                            <div class="flex align-items-center gap-2" *ngIf="selectedManager">
+                                <div>{{ selectedManager.name }}</div>
+                            </div>
+                        </ng-template>
+                        <ng-template let-manager pTemplate="item">
+                            <div class="flex align-items-center gap-2">
+                                <div>{{ manager.name }}</div>
+                            </div>
+                        </ng-template>
+                    </p-dropdown>
+                    <p-multiSelect [options]="candidates" [(ngModel)]="selectedCandidate" placeholder="Candidate(s)" optionLabel="name" display="chip" [showClear]="true"></p-multiSelect>
+
+                    </div>
+                    <div class="p-toolbar-group-center">
+                        <p-dropdown [options]="status" [(ngModel)]="selectedStatus" placeholder="Status"></p-dropdown>
+
+                        <p-dropdown [options]="skills" [(ngModel)]="selectedSkill" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Skills">
+                            <ng-template pTemplate="selectedItem">
+                                <div class="flex align-items-center gap-2" *ngIf="selectedSkill">
+                                    <div>{{ selectedSkill.name }}</div>
+                                </div>
+                            </ng-template>
+                            <ng-template let-skill pTemplate="item">
+                                <div class="flex align-items-center gap-2">
+                                    <div>{{ skill.name }}</div>
+                                </div>
+                            </ng-template>
+                        </p-dropdown>
+                    </div>
+                    <div class="p-toolbar-group-end">
+                        <button pButton label="Clear" class="p-button-outlined p-button-danger" icon="pi pi-filter-slash" ></button>
+                    </div>
+                </p-toolbar>
+
+
+
+
+                <!-- <div class="flex">
+                    <span class="p-input-icon-right ml-auto">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text"  placeholder="Search keyword" />
+                    </span>
+                    <p-dropdown [options]="managers" [(ngModel)]="selectedManager" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Manager">
+                        <ng-template pTemplate="selectedItem">
+                            <div class="flex align-items-center gap-2" *ngIf="selectedManager">
+                                <div>{{ selectedManager.name }}</div>
+                            </div>
+                        </ng-template>
+                        <ng-template let-manager pTemplate="item">
+                            <div class="flex align-items-center gap-2">
+                                <div>{{ manager.name }}</div>
+                            </div>
+                        </ng-template>
+                    </p-dropdown>
+
+                    <p-multiSelect [options]="candidates" [(ngModel)]="selectedCandidate" placeholder="Candidate(s)" optionLabel="name" display="chip" [showClear]="true"></p-multiSelect>
+                    <p-dropdown [options]="status" [(ngModel)]="selectedStatus" placeholder="Status"></p-dropdown>
+
+                    <p-dropdown [options]="skills" [(ngModel)]="selectedSkill" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Skills">
+                        <ng-template pTemplate="selectedItem">
+                            <div class="flex align-items-center gap-2" *ngIf="selectedSkill">
+                                <div>{{ selectedSkill.name }}</div>
+                            </div>
+                        </ng-template>
+                        <ng-template let-skill pTemplate="item">
+                            <div class="flex align-items-center gap-2">
+                                <div>{{ skill.name }}</div>
+                            </div>
+                        </ng-template>
+                    </p-dropdown>
+                    <button pButton label="Clear Filter" class="p-button-outlined p-button-danger"  ></button>
+
+                </div> -->
+
+
+            </ng-template>
                 <ng-template pTemplate="header">
                     <tr>
                         <th pSortableColumn="CandidateName">Candidate Name <p-sortIcon field="code"></p-sortIcon></th>

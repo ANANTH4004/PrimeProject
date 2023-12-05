@@ -19,13 +19,27 @@ export interface ICandidate {
 })
 
 export class AssessmentPageComponent implements OnInit {
+  ///
+  countries: any[] | undefined;
+  selectedCountry: any | undefined;
+  ///
+
 
   items: MenuItem[] | undefined;
   home: MenuItem | undefined;
   candidateData !: ICandidate[];
+  managers : any[] = [{ name:"Shantosh"},{ name: "Suresh" }, { name:"Alamelu"} , { name:"Praveena"}];
+  candidates : any[] = [{ name:"Ananth"} , { name:"Nithya"} , { name:"Varun"} , { name:"Kannan"}];
+  status : string[] = ["Shortlisted", "Rejected" , "Awaiting" , "Cancelled" , "Scheduled"];
+  skills : any[] = [{ name:"Java"}, { name:"Node Js"}, { name:"Angular"}, { name:"JavaScript"}];
+  selectedManager!: any;
+selectedCandidate: any;
+selectedSkill: any;
+selectedStatus: any;
 
   constructor(private candidateService: CandidateService) { }
   ngOnInit() {
+
     this.candidateService.getAssessmentData().subscribe((data: ICandidate[]) => {
       this.candidateData = data;
       console.log(data)
