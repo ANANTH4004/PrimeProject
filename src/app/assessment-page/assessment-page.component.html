@@ -14,16 +14,19 @@
         </div> -->
         <div class="candidate-table">
             <p-table [value]="candidateData"
+            #dt1
+
              [paginator]="true"
               [rows]="5"
               [showCurrentPageReport]="true"
              currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
             [rowsPerPageOptions]="[4, 8, 12]"
             [tableStyle]="{ 'min-width': '50rem' }"
+            [globalFilterFields]="['CandidateName', 'Manager', 'Assesssment', 'Skills','Result']"
             >
-            <ng-template pTemplate="caption">
+            <!-- <ng-template pTemplate="caption"> -->
 
-                <p-toolbar>
+                <!-- <p-toolbar>
                     <div class="p-toolbar-group-start ml-auto toolbar-start">
                         <span class="p-input-icon-left ml-auto">
                             <i class="pi pi-search"></i>
@@ -63,7 +66,7 @@
                     <div class="p-toolbar-group-end">
                         <button pButton label="Clear" class="p-button-outlined p-button-danger" icon="pi pi-filter-slash" ></button>
                     </div>
-                </p-toolbar>
+                </p-toolbar> -->
 
 
 
@@ -106,13 +109,81 @@
                 </div> -->
 
 
-            </ng-template>
+            <!-- </ng-template> -->
                 <ng-template pTemplate="header">
                     <tr>
-                        <th pSortableColumn="CandidateName">Candidate Name <p-sortIcon field="code"></p-sortIcon></th>
-                        <th>Manager</th>
+                        <th>
+                            <span class="p-input-icon-right ml-auto">
+                                <i class="pi pi-search"></i>
+                                <input pInputText type="text" (input)="dt1.filterGlobal($any($event.target).value, 'contains')" placeholder="Search keyword" />
+                            </span>
+                        </th>
+                        <!-- <p-columnFilter type="text" field="CandidateName" matchMode="contains" [showMenu]="false" [showClearButton]="false" placeholder="Search"></p-columnFilter> -->
+                        <th>
+                            <p-columnFilter field="Manager" matchMode="in" [showMenu]="false" [showClearButton]="false">
+                                <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                                  <p-multiSelect [ngModel]="value" appendTo="body" [options]="managers" placeholder="Manager" (onChange)="filter($event.value)"  [maxSelectedLabels]="1" [selectedItemsLabel]="'{0} items'">
+                                    <ng-template let-option pTemplate="item">
+                                      <div class="inline-block vertical-align-middle">
+                                        <span class="ml-1 mt-1">{{ option}}</span>
+                                      </div>
+                                    </ng-template>
+                                  </p-multiSelect>
+                                </ng-template>
+                              </p-columnFilter>
+
+                        </th>
+                        <th>
+                            <p-columnFilter field="CandidateName" matchMode="in" [showMenu]="false" [showClearButton]="false">
+                                <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                                  <p-multiSelect [ngModel]="value" appendTo="body" [options]="candidates" placeholder="Candidate(s)" (onChange)="filter($event.value)"  [maxSelectedLabels]="1" [selectedItemsLabel]="'{0} items'">
+                                    <ng-template let-option pTemplate="item">
+                                      <div class="inline-block vertical-align-middle">
+                                        <span class="ml-1 mt-1">{{ option}}</span>
+                                      </div>
+                                    </ng-template>
+                                  </p-multiSelect>
+                                </ng-template>
+                              </p-columnFilter>
+                        </th>
+                        <th>
+                            <p-columnFilter field="Result" matchMode="equals" [showMenu]="false" [showClearButton]="false">
+                                <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                                    <p-dropdown [ngModel]="value" [options]="status" (onChange)="filter($event.value)" placeholder="Status" [showClear]="true">
+                                        <ng-template let-option pTemplate="item">
+                                            <p-tag [value]="option" [ngClass]="getResultClass(option)"></p-tag>
+                                        </ng-template>
+                                    </p-dropdown>
+                                </ng-template>
+                            </p-columnFilter>
+                        </th>
+                        <th>
+                            <p-columnFilter field="Skills" matchMode="contains"[showMenu]="false" [showClearButton]="true">
+                                <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                                  <p-multiSelect [ngModel]="value" appendTo="body" [options]="skills" placeholder="Skills" (onChange)="filter($event.value)"  [maxSelectedLabels]="1" [selectedItemsLabel]="'{0} items'">
+                                    <ng-template let-option pTemplate="item">
+                                      <div class="inline-block vertical-align-middle">
+                                        <span class="ml-1 mt-1">{{option}}</span>
+                                      </div>
+                                    </ng-template>
+                                  </p-multiSelect>
+                                </ng-template>
+                              </p-columnFilter>
+                        </th>
+                        <th>
+                            <button pButton label="Clear filter" class="p-button-outlined p-button-danger"  (click)="clear(dt1)"></button>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th pSortableColumn="CandidateName">
+
+                            Candidate Name
+                             <p-sortIcon field="CandidateName"></p-sortIcon>
+
+                            </th>
+                        <th pSortableColumn="Manager">Manager <p-sortIcon field="Manager"></p-sortIcon></th>
                         <th>Assessment</th>
-                        <th pSortableColumn="Date">Date  <p-sortIcon field="code"></p-sortIcon></th>
+                        <th pSortableColumn="Date">Date  <p-sortIcon field="Date"></p-sortIcon></th>
                         <th>Skills</th>
                         <th>Result</th>
                         <th>Score</th>

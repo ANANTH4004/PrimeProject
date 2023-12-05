@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CandidateService } from '../Services/candidate.service';
 import { MenuItem } from 'primeng/api';
+import { Table } from 'primeng/table';
 
 export interface ICandidate {
   CandidateName: string
@@ -19,6 +20,7 @@ export interface ICandidate {
 })
 
 export class AssessmentPageComponent implements OnInit {
+
   ///
   countries: any[] | undefined;
   selectedCountry: any | undefined;
@@ -28,10 +30,10 @@ export class AssessmentPageComponent implements OnInit {
   items: MenuItem[] | undefined;
   home: MenuItem | undefined;
   candidateData !: ICandidate[];
-  managers : any[] = [{ name:"Shantosh"},{ name: "Suresh" }, { name:"Alamelu"} , { name:"Praveena"}];
-  candidates : any[] = [{ name:"Ananth"} , { name:"Nithya"} , { name:"Varun"} , { name:"Kannan"}];
+  managers : any[] = ["Shanthosh","Suresh" ,"Alamelu" , "Madan"];
+  candidates : any[] = ["Anand" ,"Nithya" , "varun" , "samantha"];
   status : string[] = ["Shortlisted", "Rejected" , "Awaiting" , "Cancelled" , "Scheduled"];
-  skills : any[] = [{ name:"Java"}, { name:"Node Js"}, { name:"Angular"}, { name:"JavaScript"}];
+  skills : any[] = ["Java", "Node Js", "Angular", "JavaScript"];
   selectedManager!: any;
 selectedCandidate: any;
 selectedSkill: any;
@@ -104,5 +106,12 @@ selectedStatus: any;
     const remainingCount = skills.length - result.length;
 
     return { skills: result, remainingCount: remainingCount };
+  }
+
+  value1(arg0: any) {
+   console.log(arg0);
+    }
+    clear(table: Table) {
+      table.clear();
   }
 }
