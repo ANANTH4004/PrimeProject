@@ -112,17 +112,19 @@
             <!-- </ng-template> -->
                 <ng-template pTemplate="header">
                     <tr>
-                        <th>
-                            <span class="p-input-icon-right ml-auto">
+                        <th colspan="7">
+
+                            <div class="filter-components">
+                            <div>
+                            <span class="p-input-icon-right ml-auto search-bar">
                                 <i class="pi pi-search"></i>
-                                <input pInputText type="text" (input)="dt1.filterGlobal($any($event.target).value, 'contains')" placeholder="Search keyword" />
+                                <input class="search-bar" pInputText type="text" (input)="dt1.filterGlobal($any($event.target).value, 'contains')" placeholder="Search" />
                             </span>
-                        </th>
-                        <!-- <p-columnFilter type="text" field="CandidateName" matchMode="contains" [showMenu]="false" [showClearButton]="false" placeholder="Search"></p-columnFilter> -->
-                        <th>
-                            <p-columnFilter field="Manager" matchMode="in" [showMenu]="false" [showClearButton]="false">
+                        </div>
+                        <div class="dropdown-bar">
+                            <p-columnFilter  field="Manager" matchMode="in" [showMenu]="false" [showClearButton]="false">
                                 <ng-template pTemplate="filter" let-value let-filter="filterCallback">
-                                  <p-multiSelect [ngModel]="value" appendTo="body" [options]="managers" placeholder="Manager" (onChange)="filter($event.value)"  [maxSelectedLabels]="1" [selectedItemsLabel]="'{0} items'">
+                                  <p-multiSelect  [ngModel]="value" appendTo="body" [options]="managers" placeholder="Manager" (onChange)="filter($event.value)"  [maxSelectedLabels]="1" [selectedItemsLabel]="'{0} items'">
                                     <ng-template let-option pTemplate="item">
                                       <div class="inline-block vertical-align-middle">
                                         <span class="ml-1 mt-1">{{ option}}</span>
@@ -131,9 +133,8 @@
                                   </p-multiSelect>
                                 </ng-template>
                               </p-columnFilter>
-
-                        </th>
-                        <th>
+                            </div>
+                                <div>
                             <p-columnFilter field="CandidateName" matchMode="in" [showMenu]="false" [showClearButton]="false">
                                 <ng-template pTemplate="filter" let-value let-filter="filterCallback">
                                   <p-multiSelect [ngModel]="value" appendTo="body" [options]="candidates" placeholder="Candidate(s)" (onChange)="filter($event.value)"  [maxSelectedLabels]="1" [selectedItemsLabel]="'{0} items'">
@@ -145,8 +146,8 @@
                                   </p-multiSelect>
                                 </ng-template>
                               </p-columnFilter>
-                        </th>
-                        <th>
+                            </div>
+                            <div class="dropdown-bar">
                             <p-columnFilter field="Result" matchMode="equals" [showMenu]="false" [showClearButton]="false">
                                 <ng-template pTemplate="filter" let-value let-filter="filterCallback">
                                     <p-dropdown [ngModel]="value" [options]="status" (onChange)="filter($event.value)" placeholder="Status" [showClear]="true">
@@ -156,11 +157,11 @@
                                     </p-dropdown>
                                 </ng-template>
                             </p-columnFilter>
-                        </th>
-                        <th>
-                            <p-columnFilter field="Skills" matchMode="contains"[showMenu]="false" [showClearButton]="true">
+                        </div>
+                        <div >
+                            <p-columnFilter class="dropdown-skills"  field="Skills" matchMode="contains"[showMenu]="false" [showClearButton]="true">
                                 <ng-template pTemplate="filter" let-value let-filter="filterCallback">
-                                  <p-multiSelect [ngModel]="value" appendTo="body" [options]="skills" placeholder="Skills" (onChange)="filter($event.value)"  [maxSelectedLabels]="1" [selectedItemsLabel]="'{0} items'">
+                                  <p-multiSelect [style]="{width :'175px'}" [ngModel]="value" appendTo="body" [options]="skills" placeholder="Skills" (onChange)="filter($event.value)"  [maxSelectedLabels]="1" [selectedItemsLabel]="'{0} items'">
                                     <ng-template let-option pTemplate="item">
                                       <div class="inline-block vertical-align-middle">
                                         <span class="ml-1 mt-1">{{option}}</span>
@@ -169,10 +170,13 @@
                                   </p-multiSelect>
                                 </ng-template>
                               </p-columnFilter>
+                            </div>
+                            <div class="button-div">
+                            <button  pButton label="Clear filter" class="p-button-outlined p-button-danger"  (click)="clear(dt1)"></button>
+                        </div>
+                    </div>
                         </th>
-                        <th>
-                            <button pButton label="Clear filter" class="p-button-outlined p-button-danger"  (click)="clear(dt1)"></button>
-                        </th>
+                        <th></th>
                     </tr>
                     <tr>
                         <th pSortableColumn="CandidateName">
@@ -187,6 +191,7 @@
                         <th>Skills</th>
                         <th>Result</th>
                         <th>Score</th>
+                        <th></th>
                     </tr>
                 </ng-template>
                 <ng-template pTemplate="body" let-candidate>
@@ -205,6 +210,7 @@
                         <!-- <td>{{getFormattedSkills(candidate.Skills) }}</td> -->
                         <td><p [ngClass]="getResultClass(candidate.Result)">{{ candidate.Result }}</p> </td>
                         <td>{{ candidate.Score }}</td>
+                        <td>icons</td>
                     </tr>
                 </ng-template>
             </p-table>
