@@ -16,6 +16,7 @@ import { BodyComponent } from './body/body.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AssessmentPageComponent } from './assessment-page/assessment-page.component';
 import {  HttpClientModule } from '@angular/common/http';
+import { ExamPageComponent } from './exam-page/exam-page.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {  HttpClientModule } from '@angular/common/http';
     TestPageComponent,
     NavbarComponent,
     BodyComponent,
-    AssessmentPageComponent
+    AssessmentPageComponent,
+    ExamPageComponent
   ],
   imports: [
     BrowserAnimationsModule,

@@ -1,0 +1,118 @@
+.wholepage{
+    display:flex;
+    flex-direction: column;
+}
+
+.body{
+    display:flex;
+    flex-direction: column;
+}
+.header-design{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(91.47deg, #652D90 14.44%, #D61360 158.5%);
+    p{
+        font-size: 20px;
+        font-weight: 450;
+
+    }
+    ;
+::ng-deep .p-paginator{
+    background: none;
+}
+}
+
+.duration-design{
+
+    background: linear-gradient(91.47deg, #652D90 14.44%, #D61360 158.5%);
+    display: flex;
+
+}
+
+
+.button-design
+{
+ ::ng-deep .p-button {
+  color: #652D90;
+  background: #ffffff;
+  border: 1px solid #652D90;
+  &:hover {
+    color: #57c0ed;
+    ;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}
+}
+.exam-body{
+    padding-top: 2%;
+}
+.question{
+    padding: 3%;
+    font-size: large;
+    font-weight: 500;
+
+}
+.options{
+    padding: 2%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+::ng-deep .p-checkbox .p-checkbox-box {
+
+    width: 40px;
+    height: 40px;
+
+}
+::ng-deep .field-checkbox{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    align-items: center;
+    gap: 3%;
+
+
+    .p-checkbox{
+        width: 40px;
+    height: 40px;
+    }
+    .p-checkbox-label {
+        line-height: 1;
+        padding-top: 20px;
+    }
+
+}
+.custom-checkbox {
+    display: inline-block;
+    position: relative;
+  }
+
+  .custom-checkbox i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Add this to your component's CSS or global styles */
+/* Add this to your component's CSS or global styles */
+.p-checkbox-custom .p-checkbox-box {
+    position: relative;
+  }
+
+ 
+
+// .fourth-design{
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     .label{
+//         align-items: center;
+
+//     }
+
+// }

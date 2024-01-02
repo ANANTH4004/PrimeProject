@@ -31,6 +31,8 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { TagModule } from 'primeng/tag';
 import { BadgeModule } from 'primeng/badge';
 import { ChipModule } from 'primeng/chip';
+import { PaginatorModule } from 'primeng/paginator';
+import { SplitterModule } from 'primeng/splitter';
 // Import other PrimeNG modules you need
 
 @NgModule({
@@ -65,7 +67,9 @@ import { ChipModule } from 'primeng/chip';
     BreadcrumbModule,
     TagModule,
     BadgeModule,
-    ChipModule
+    ChipModule,
+    PaginatorModule,
+    SplitterModule
     // Import other PrimeNG modules you need
   ],
   exports: [
@@ -100,7 +104,9 @@ import { ChipModule } from 'primeng/chip';
     BreadcrumbModule,
     TagModule,
     BadgeModule,
-    ChipModule
+    ChipModule,
+    PaginatorModule,
+    SplitterModule
     // Export other PrimeNG modules you need
   ]
 })
