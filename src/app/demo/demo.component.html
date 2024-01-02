@@ -1,0 +1,11 @@
+<div *ngFor="let question of questions" class="question-container">
+    <h3>{{ question.description }}</h3>
+    <form>
+      <div *ngFor="let option of question.options" class="option-container">
+        <div class="option-checkbox">
+          <input type="checkbox" id="{{ option }}" name="{{ question.description }}" value="{{ option }}">
+          <label for="{{ option }}">{{ option }}</label>
+        </div>
+      </div>
+    </form>
+  </div>

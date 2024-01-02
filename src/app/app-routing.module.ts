@@ -10,10 +10,11 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AssessmentPageComponent } from './assessment-page/assessment-page.component';
 import { ExamPageComponent } from './exam-page/exam-page.component';
+import { DemoComponent } from './demo/demo.component';
 
 const routes: Routes = [
   {path:'' , redirectTo: 'dashboard',pathMatch:'full'},
-  {path:'dashboard' , component: ExamPageComponent},
+  {path:'dashboard' , component: DemoComponent},
   {path:'signup' , component: SignUpComponent},
   {path:'login' , component: LoginComponent},
   {path:'double' , component: DoubleDropdownComponent},

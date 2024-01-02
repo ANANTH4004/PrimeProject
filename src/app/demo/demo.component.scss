@@ -1,0 +1,40 @@
+.question-container {
+    margin-bottom: 20px;
+
+    h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    form {
+      .option-container {
+        margin-bottom: 8px;
+
+        .option-checkbox {
+          display: flex;
+          align-items: center;
+          padding: 8px;
+          transition: background-color 0.3s;
+
+          input {
+            margin-right: 8px;
+
+            &:hover {
+              cursor: pointer;
+              + label {
+                background-color: #ff0000; // Red color on hover
+              }
+            }
+
+            &:checked + label {
+              background-color: green; // Reset background when option is checked
+            }
+          }
+
+          label {
+            transition: background-color 0.3s;
+          }
+        }
+      }
+    }
+  }
