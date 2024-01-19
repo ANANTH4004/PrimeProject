@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { AssessmentPageComponent } from './assessment-page/assessment-page.component';
 import { ExamPageComponent } from './exam-page/exam-page.component';
 import { DemoComponent } from './demo/demo.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 const routes: Routes = [
   {path:'' , redirectTo: 'dashboard',pathMatch:'full'},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'login' , component: LoginComponent},
   {path:'double' , component: DoubleDropdownComponent},
   {path:'dynamic' , component: DynamicAddingComponent},
+  {path : 'dialog' , component:DialogComponent}
 ];
 
 @NgModule({
