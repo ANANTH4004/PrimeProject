@@ -18,6 +18,7 @@ import { AssessmentPageComponent } from './assessment-page/assessment-page.compo
 import {  HttpClientModule } from '@angular/common/http';
 import { ExamPageComponent } from './exam-page/exam-page.component';
 import { DemoComponent } from './demo/demo.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { DemoComponent } from './demo/demo.component';
     BodyComponent,
     AssessmentPageComponent,
     ExamPageComponent,
-    DemoComponent
+    DemoComponent,
+    DialogComponent
   ],
   imports: [
     BrowserAnimationsModule,
