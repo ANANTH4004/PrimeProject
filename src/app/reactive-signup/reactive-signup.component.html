@@ -1,0 +1,144 @@
+<div class="signup-container">
+    <div class="signup-box">
+      <div class="signup-slogan">
+        <img src="../assets\mphasis-logo.png" alt="Logo" width="100" />
+        <p class="heading">MTalent</p>
+        <p class="description">
+          Streamline your Hiring process <br />Effortlessly schedule and Assess
+          with MTalent
+        </p>
+      </div>
+      <div class="signup-card">
+        <p-card>
+          <h4 class="signup-wording">Register with your personal information</h4>
+          <form class="signup-form" [formGroup]="signupForm">
+            <div class="p-inputgroup ">
+
+              <div class="name">
+              <input
+                class="signup-firstname"
+                type="text"
+                pInputText
+                placeholder="First Name"
+                formControlName="firstname"
+                name="firstname"
+                aria-describedby="username-help"
+              />
+              <!-- <small id="username-help" class="p-error">Username is not available.</small> -->
+
+              <input
+                class="signup-lastname"
+                type="text"
+                pInputText
+                placeholder="Last Name"
+                formControlName="lastname"
+                name="lastname"
+              />
+            </div>
+
+            </div>
+            <small class="p-error">Username is not available.</small>
+
+            <div class="p-inputgroup signup-phone">
+
+              <input
+                class="signup-firstname"
+                type="number"
+                pInputText
+                placeholder="Phone number"
+
+                formControlName="phoneNumber"
+                name="phoneNumber"
+              />
+              <span class="adjust">
+              <div *ngIf="signupForm.get('phoneNumber')?.invalid && (signupForm.get('phoneNumber')?.dirty || signupForm.get('phoneNumber')?.touched)||signclicked">
+                <div *ngIf="signupForm.get('phoneNumber')?.errors?.['pattern']">Invalid Phone Number.</div>
+              </div></span>
+            </div>
+
+            <div class="email-group">
+              <div class="input-with-icon">
+                <i class="pi pi-user"></i>
+                <input
+                  class="email-signup"
+                  type="text"
+                  pInputText
+                  placeholder="Email"
+                  formControlName="emailId"
+                  name="emailId"
+                />
+              </div>
+              <div *ngIf="signupForm.get('emailId')?.invalid && (signupForm.get('emailId')?.dirty || signupForm.get('emailId')?.touched)||signclicked">
+                <div *ngIf="signupForm.get('emailId')?.errors?.['required']">Email is required.</div>
+                <div *ngIf="signupForm.get('emailId')?.errors?.['email']">Invalid Email.</div>
+              </div>
+            </div>
+
+            <div class="p-inputgroup input-with-icon1">
+              <i class="pi pi-lock"></i>
+              <input
+                class="signup-newpassword"
+                type="password"
+                pInputText
+                placeholder="New Password"
+                formControlName="password"
+                name="password"
+              />
+              <div *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.dirty || signupForm.get('password')?.touched)||signclicked">
+                <div *ngIf="signupForm.get('password')?.errors?.['required']">Password is required.</div>
+                <!-- ... (add other password validation messages as needed) ... -->
+              </div>
+            </div>
+
+            <div class="p-inputgroup input-with-icon1">
+              <i class="pi pi-lock"></i>
+              <input
+                class="confirmpassword-signup"
+                type="password"
+                pInputText
+                placeholder="Confirm Password"
+                formControlName="confirmPassword"
+                name="confirmPassword"
+              />
+              <div *ngIf="signupForm.get('confirmPassword')?.invalid && (signupForm.get('confirmPassword')?.dirty || signupForm.get('confirmPassword')?.touched)||signclicked">
+                <div *ngIf="signupForm.get('confirmPassword')?.errors?.['required']">Confirm Password is required.</div>
+              </div>
+            </div>
+            <span class="agree-signup"
+              >By clicking Sign Up, you agree to our <a href="#">Terms</a>,
+              <a href="#">Privacy Policy</a> and
+              <a href="#">Cookies Policy</a>.</span
+            >
+
+            <div class="button-signup">
+              <button
+                pButton
+                type="submit"
+                (click)="signup()"
+                label="Sign Up"
+                class="p-button-success"
+                (click)="signclicked=true"
+              ></button>
+            </div>
+          </form>
+          <div class="hrLine"></div>
+          <div class="login-signup">
+            <button
+
+              class="signup-button"
+              style="border: #652d90"
+            >
+              <span class="login-label"> Already has an account? Login</span>
+            </button>
+          </div>
+        </p-card>
+        <div class="cardfooter">
+          <a class="a1">Privacy Policy</a>
+          <i class="pi pi-circle-on"></i>
+          <a class="a2">About Us</a>
+          <i class="pi pi-circle-on"></i>
+          <a class="a3">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>

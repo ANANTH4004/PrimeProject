@@ -18,6 +18,8 @@ import { AssessmentPageComponent } from './assessment-page/assessment-page.compo
 import {  HttpClientModule } from '@angular/common/http';
 import { ExamPageComponent } from './exam-page/exam-page.component';
 import { DemoComponent } from './demo/demo.component';
+import { ReactiveSignupComponent } from './reactive-signup/reactive-signup.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { DemoComponent } from './demo/demo.component';
     BodyComponent,
     AssessmentPageComponent,
     ExamPageComponent,
-    DemoComponent
+    DemoComponent,
+    ReactiveSignupComponent,
+    SignupComponent
   ],
   imports: [
     BrowserAnimationsModule,

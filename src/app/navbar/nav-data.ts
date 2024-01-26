@@ -23,5 +23,10 @@ export const navbarData = [
         routeLink: 'dynamic',
         icon: 'far fa-sign-out-alt',
         label: 'Sign Out'
+    },
+    {
+        routeLink: 'reactivesignup',
+        icon: 'far fa-sign-out-alt',
+        label: 'Sign Up'
     }
 ]

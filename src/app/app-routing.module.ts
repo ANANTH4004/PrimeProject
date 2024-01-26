@@ -11,14 +11,18 @@ import { LoginComponent } from './login/login.component';
 import { AssessmentPageComponent } from './assessment-page/assessment-page.component';
 import { ExamPageComponent } from './exam-page/exam-page.component';
 import { DemoComponent } from './demo/demo.component';
+import { ReactiveSignupComponent } from './reactive-signup/reactive-signup.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   {path:'' , redirectTo: 'dashboard',pathMatch:'full'},
   {path:'dashboard' , component: DemoComponent},
-  {path:'signup' , component: SignUpComponent},
+  {path:'signup' , component: SignupComponent},
   {path:'login' , component: LoginComponent},
   {path:'double' , component: DoubleDropdownComponent},
-  {path:'dynamic' , component: DynamicAddingComponent},
+  {path:'dynamic' , component: SignupComponent},
+  {path:'reactivesignup' , component: ReactiveSignupComponent},
+
 ];
 
 @NgModule({
