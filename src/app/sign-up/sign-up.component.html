@@ -6,7 +6,7 @@
         <span class="p-inputgroup-addon">
           <i class="pi pi-google"></i>
         </span>
-        <input pInputText placeholder="Email" type="email" id="email" formControlName="email" />
+        <input appInput="noSpecialChars" pInputText placeholder="Email"  id="email" formControlName="email" />
       </div>
       <span class="ng-invalid ng-dirty error"
         *ngIf="sighUpForm.controls['email'].touched && sighUpForm.controls['email'].errors">

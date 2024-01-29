@@ -6,7 +6,7 @@
                 <span class="p-inputgroup-addon">
                     <i class="pi pi-google"></i>
                 </span>
-                <input pInputText placeholder="Email" type="email" id="email" formControlName="email" />
+                <input pInputText appInput="noSpecialChars" placeholder="Email"  id="email" formControlName="email" />
             </div>
             <span class="ng-invalid ng-dirty error"
                 *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].errors">
@@ -23,7 +23,7 @@
                 <span class="p-inputgroup-addon">
                     <i class="pi pi-key"></i>
                 </span>
-                <input pInputText [type]="passwordVisible ? 'text' : 'password'" placeholder="Password" type="password"
+                <input appInput="noSpecialChars" pInputText [type]="passwordVisible ? 'text' : 'password'" placeholder="Password" type="password"
                     id="password" formControlName="password" />
                 <span class="toggle-password p-inputgroup-addon" (click)="togglePasswordVisibility()">
                     <i [ngClass]="passwordVisible ? 'pi pi-eye-slash' : 'pi pi-eye'"></i>
