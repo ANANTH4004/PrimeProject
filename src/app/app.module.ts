@@ -20,6 +20,7 @@ import { ExamPageComponent } from './exam-page/exam-page.component';
 import { DemoComponent } from './demo/demo.component';
 import { ReactiveSignupComponent } from './reactive-signup/reactive-signup.component';
 import { SignupComponent } from './signup/signup.component';
+import { InputDirective } from './input.directive';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { SignupComponent } from './signup/signup.component';
     DemoComponent,
     ReactiveSignupComponent,
     SignupComponent
+
   ],
   imports: [
     BrowserAnimationsModule,
