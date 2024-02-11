@@ -21,6 +21,12 @@ import { DemoComponent } from './demo/demo.component';
 import { ReactiveSignupComponent } from './reactive-signup/reactive-signup.component';
 import { SignupComponent } from './signup/signup.component';
 import { InputDirective } from './input.directive';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeaderComponent } from './header/header.component';
+import { ContactComponent } from './contact/contact.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductComponent } from './product/product.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -38,8 +44,13 @@ import { InputDirective } from './input.directive';
     ExamPageComponent,
     DemoComponent,
     ReactiveSignupComponent,
-    SignupComponent
-
+    SignupComponent,
+    DashboardComponent,
+    HeaderComponent,
+    ContactComponent,
+    ProductsComponent,
+    ProductComponent,
+    AboutComponent
   ],
   imports: [
     BrowserAnimationsModule,

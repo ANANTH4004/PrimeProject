@@ -13,6 +13,11 @@ import { ExamPageComponent } from './exam-page/exam-page.component';
 import { DemoComponent } from './demo/demo.component';
 import { ReactiveSignupComponent } from './reactive-signup/reactive-signup.component';
 import { SignupComponent } from './signup/signup.component';
+import { ProductsComponent } from './products/products.component';
+import { ContactComponent } from './contact/contact.component';
+import { ProductComponent } from './product/product.component';
+import { AboutComponent } from './about/about.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {path:'' , redirectTo: 'dashboard',pathMatch:'full'},
@@ -25,8 +30,18 @@ const routes: Routes = [
 
 ];
 
+const demoroutes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'home', component: DashboardComponent},
+  { path: 'about', component: AboutComponent},
+  { path: 'contact', component: ContactComponent},
+  { path: 'products', component: ProductsComponent},
+  { path: 'product/:id', component: ProductComponent},
+  { path: '**', redirectTo: 'home'}
+];
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(demoroutes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
